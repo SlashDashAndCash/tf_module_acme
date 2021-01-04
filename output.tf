@@ -10,7 +10,7 @@ output "issuer_pem" {
   value = acme_certificate.certificate.issuer_pem
 }
 
-output "fullchain" {
+output "fullchain_pem" {
   value = join("\n\n", [acme_certificate.certificate.certificate_pem, acme_certificate.certificate.issuer_pem])
 }
 
