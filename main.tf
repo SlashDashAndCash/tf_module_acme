@@ -20,6 +20,7 @@ resource "acme_certificate" "certificate" {
   subject_alternative_names = [var.fqdn]
   certificate_p12_password  = random_password.p12.result
   pre_check_delay           = 120
+  recursive_nameservers     = var.recursive_nameservers
 
   dns_challenge {
     provider = "inwx"
